@@ -33,14 +33,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Scaffold(topBar = {
-        TopAppBar(
-            title = { Text("TopAppBar") },
-            backgroundColor = Color(0xfff25287)) },
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("TopAppBar") },
+                backgroundColor = Color(0xfff25287)
+            )
+        },
         floatingActionButtonPosition = FabPosition.End,
-        floatingActionButton = { FloatingActionButton(onClick = {}){
-            Text("X")
-        } },
+        floatingActionButton = {
+            FloatingActionButton(onClick = {}) {
+                Text("X")
+            }
+        },
     ) {
 //        Text(text = "Hello $name!")
         MyComposableView()
@@ -59,10 +64,12 @@ fun MyRowItem() {
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(text = "안녕하세요!?",
+        Text(
+            text = "안녕하세요!?",
             Modifier
                 .padding(all = 10.dp)
-                .background(Color.Cyan))
+                .background(Color.Cyan)
+        )
         Spacer(modifier = Modifier.size(10.dp))
         Text(text = "안녕하세요!?")
         Spacer(modifier = Modifier.size(10.dp))
